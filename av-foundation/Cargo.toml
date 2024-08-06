@@ -1,0 +1,43 @@
+[package]
+name = "av-foundation"
+description = "Bindings to AVFoundation framework"
+homepage = "https://github.com/libark/apple-media-rs"
+repository = "https://github.com/libark/apple-media-rs"
+documentation = "https://docs.rs/av-foundation"
+version = "0.3.1"
+authors = ["Zhou Wei <zhouwei@ehom.net>"]
+license = "MIT OR Apache-2.0"
+categories = ["multimedia::video", "os::macos-apis"]
+keywords = ["avfoundation", "camera", "capture"]
+edition = "2018"
+
+[dependencies]
+core-foundation = { version = "0.9", default-features = false }
+core-media = { version = "0.4", path = "../core-media", default-features = false, features = ["objc"] }
+core-video = { version = "0.3", path = "../core-video", default-features = false, features = ["objc"] }
+dispatch2 = "0.1"
+libc = "0.2"
+objc2 = "0.5"
+objc2-foundation = { version = "0.2", features = ["NSArray", "NSDictionary", "NSEnumerator", "NSError", "NSRange", "NSString", "NSValue"] }
+
+[features]
+default = ["capture", "link"]
+audio = []
+capture = []
+editing = []
+link = ["core-foundation/link", "core-media/link", "core-video/link"]
+playback = []
+
+[[example]]
+name = "video_capture"
+
+[package.metadata.docs.rs]
+no-default-features = true
+features = ["capture"]
+default-target = "x86_64-apple-darwin"
+targets = [
+    "aarch64-apple-darwin",
+    "aarch64-apple-ios",
+    "x86_64-apple-darwin",
+    "x86_64-apple-ios",
+]
