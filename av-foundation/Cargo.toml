@@ -18,7 +18,7 @@ core-video = { version = "0.3", path = "../core-video", default-features = false
 dispatch2 = "0.1"
 libc = "0.2"
 objc2 = "0.5"
-objc2-foundation = { version = "0.2", features = ["NSArray", "NSDictionary", "NSEnumerator", "NSError", "NSRange", "NSString", "NSValue"] }
+objc2-foundation = { version = "0.2", features = ["NSArray", "NSDictionary", "NSEnumerator", "NSError", "NSGeometry", "NSRange", "NSString", "NSValue"] }
 
 [features]
 default = ["capture", "link"]
