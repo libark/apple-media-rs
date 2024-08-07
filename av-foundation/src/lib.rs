@@ -16,6 +16,8 @@ extern "C" {}
 #[cfg(feature = "capture")]
 pub mod capture_device;
 #[cfg(feature = "capture")]
+pub mod capture_device_discovery_session;
+#[cfg(feature = "capture")]
 pub mod capture_input;
 #[cfg(feature = "capture")]
 pub mod capture_output_base;

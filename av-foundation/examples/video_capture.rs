@@ -71,6 +71,11 @@ extern_methods!(
 fn main() {
     let session = AVCaptureSession::new();
     let device: Id<AVCaptureDevice> = unsafe { AVCaptureDevice::default_device_with_media_type(AVMediaTypeVideo).unwrap() };
+    
+    println!("device: {:?}", device);
+    println!("device type: {:?}", device.device_type());
+    println!("device position: {:?}", device.position());
+    
     let input = AVCaptureDeviceInput::from_device(&device).unwrap();
     let output = AVCaptureVideoDataOutput::new();
     let delegate = Delegate::new();
